@@ -8,14 +8,21 @@
 </head>
 <body>
 
-<header>
-  <div id="global-actions">
-    <%= link_to "Logout", :session,
-	:method => :delete, :confirm => "are you sure?", :id => "logout "%>
+<header class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">PhotoShare</a>
+      <ul class="nav">
+	<li>
+	  <%= link_to "Logout", :session,
+	      :method => :delete, :confirm => "are you sure?", :id => "logout "%>
+	</li>
+      </ul>
+    </div>
   </div>
 </header>
 
-<sction id="contents">
+<sction id="contents" class="container">
   <%= yield %>
 </sction>
 

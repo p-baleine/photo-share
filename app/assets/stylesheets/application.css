@@ -12,12 +12,33 @@
  *= require_tree .
  */
 
-#global-actions {
-  float: right;
-  width: 100%;
+body {
+  padding: 40px;
 }
 
-header {
-  text-align: right;
-  padding: 20px;
+header.navbar .nav {
+  float: right;
+}
+
+#photos, #new-photo {
+  padding: 40px;
+}
+
+#photos .photo {
+  width: 240px;
+  margin: 20px;
+  display: inline-block;
+}
+
+#photos .photo img {
+  border: 1px solid #dcdcdc;
+}
+
+#photos .actions {
+  float: right;
+  font-size: .8em;
+}
+
+body a {
+  color: #808080;
 }

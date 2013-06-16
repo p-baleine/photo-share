@@ -1,29 +1,24 @@
-<h1>Listing photos</h1>
-
-<table>
-  <tr>
-    <th>User</th>
-    <th>Title</th>
-    <th>Decription</th>
-    <th>Path</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div id="photos">
 
 <% @photos.each do |photo| %>
-  <tr>
-    <td><%= photo.user.email %></td>
-    <td><%= photo.title %></td>
-    <td><%= photo.decription %></td>
-    <td><%= image_tag photo.path.thumb.url %></td>
-    <td><%= link_to 'Show', photo %></td>
-    <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
-    <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <div class="photo">
+    <%= image_tag photo.path.thumb.url %>
+    <div class="info">
+      <div class="email">
+	<%= photo.user.email %>
+      </div>
+      <div class="title">
+	<%= photo.title %>
+      </div>
+      <div class="actions">
+	<%= link_to 'Show', photo %> | <%= link_to 'Show', photo %> | <%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+  </div>
 <% end %>
-</table>
+
+</div>
 
 <br />
 
-<%= link_to 'New Photo', new_photo_path %>
+<%= link_to 'New Photo', new_photo_path, :id => "new-photo" %>
