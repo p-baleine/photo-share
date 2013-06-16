@@ -8,7 +8,16 @@
 </head>
 <body>
 
-<%= yield %>
+<header>
+  <div id="global-actions">
+    <%= link_to "Logout", :session,
+	:method => :delete, :confirm => "are you sure?", :id => "logout "%>
+  </div>
+</header>
+
+<sction id="contents">
+  <%= yield %>
+</sction>
 
 </body>
 </html>
